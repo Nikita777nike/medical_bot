@@ -1,0 +1,126 @@
+2025-12-27 22:55:09,534 - __main__ - INFO - ==================================================
+2025-12-27 22:55:09,535 - __main__ - INFO - Запуск медицинского бота RazMedBot
+2025-12-27 22:55:09,537 - __main__ - INFO - Токен: 8499939933:AAGF...
+2025-12-27 22:55:09,538 - __main__ - INFO - Режим оплаты: ТЕСТОВЫЙ
+2025-12-27 22:55:09,540 - __main__ - INFO - Макс. документов: 10
+2025-12-27 22:55:09,549 - __main__ - INFO - Размер файла: 20.0 МБ
+2025-12-27 22:55:09,551 - __main__ - INFO - Админ ID: 6128491472
+2025-12-27 22:55:09,552 - __main__ - INFO - ==================================================
+2025-12-27 22:55:10,633 - __main__ - INFO - Бот авторизован как: @MedRazbor_help_bot (ID: 8499939933)
+2025-12-27 22:55:10,773 - __main__ - INFO - Команды бота успешно настроены
+2025-12-27 22:55:10,789 - database.database - INFO - Создан бэкап БД: backup_20251227_225510.db
+2025-12-27 22:55:10,790 - __main__ - INFO - Резервная копия БД создана при запуске
+2025-12-27 22:55:11,393 - __main__ - ERROR - Ошибка импорта роутеров: cannot import name 'OrderState' from partially initialized module 'handlers.user' (most likely due to a circular import) (C:\Users\АДМИН\ProjectRazMedBot\handlers\user.py)
+2025-12-27 22:55:11,395 - __main__ - ERROR - Критическая ошибка при запуске: cannot import name 'OrderState' from partially initialized module 'handlers.user' (most likely due to a circular import) (C:\Users\АДМИН\ProjectRazMedBot\handlers\user.py)
+Traceback (most recent call last):
+  File "C:\Users\АДМИН\ProjectRazMedBot\bot.py", line 168, in main
+    await include_routers()
+  File "C:\Users\АДМИН\ProjectRazMedBot\bot.py", line 69, in include_routers
+    raise e
+  File "C:\Users\АДМИН\ProjectRazMedBot\bot.py", line 53, in include_routers
+    from handlers.common import router as common_router
+  File "C:\Users\АДМИН\ProjectRazMedBot\handlers\__init__.py", line 3, in <module>
+    from .user import router as user_router
+  File "C:\Users\АДМИН\ProjectRazMedBot\handlers\user.py", line 32, in <module>
+    from handlers.payment import send_invoice_to_user
+  File "C:\Users\АДМИН\ProjectRazMedBot\handlers\payment.py", line 19, in <module>
+    from handlers.user import OrderState  # Измененный импорт
+ImportError: cannot import name 'OrderState' from partially initialized module 'handlers.user' (most likely due to a circular import) (C:\Users\АДМИН\ProjectRazMedBot\handlers\user.py)
+2025-12-27 22:55:11,525 - __main__ - INFO - Остановка бота...
+2025-12-27 22:55:11,526 - __main__ - INFO - Соединение с БД закрыто
+2025-12-27 22:55:11,633 - __main__ - ERROR - Необработанное исключение: cannot import name 'OrderState' from partially initialized module 'handlers.user' (most likely due to a circular import) (C:\Users\АДМИН\ProjectRazMedBot\handlers\user.py)
+Traceback (most recent call last):
+  File "C:\Users\АДМИН\ProjectRazMedBot\bot.py", line 199, in <module>
+    asyncio.run(main())
+  File "C:\Users\АДМИН\AppData\Local\Programs\Python\Python310\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "C:\Users\АДМИН\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "C:\Users\АДМИН\ProjectRazMedBot\bot.py", line 168, in main
+    await include_routers()
+  File "C:\Users\АДМИН\ProjectRazMedBot\bot.py", line 69, in include_routers
+    raise e
+  File "C:\Users\АДМИН\ProjectRazMedBot\bot.py", line 53, in include_routers
+    from handlers.common import router as common_router
+  File "C:\Users\АДМИН\ProjectRazMedBot\handlers\__init__.py", line 3, in <module>
+    from .user import router as user_router
+  File "C:\Users\АДМИН\ProjectRazMedBot\handlers\user.py", line 32, in <module>
+    from handlers.payment import send_invoice_to_user
+  File "C:\Users\АДМИН\ProjectRazMedBot\handlers\payment.py", line 19, in <module>
+    from handlers.user import OrderState  # Измененный импорт
+ImportError: cannot import name 'OrderState' from partially initialized module 'handlers.user' (most likely due to a circular import) (C:\Users\АДМИН\ProjectRazMedBot\handlers\user.py)
+2025-12-27 22:55:11,785 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000244BB918760>
+2025-12-27 22:55:11,786 - asyncio - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x00000244BB942140>, 41917.984)]']
+connector: <aiohttp.connector.TCPConnector object at 0x00000244BB918670>
+2025-12-27 22:55:11,801 - asyncio - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x00000244BB918C10>
+transport: <_ProactorSocketTransport fd=340 read=<_OverlappedFuture cancelled>>
+Traceback (most recent call last):
+  File "C:\Users\АДМИН\AppData\Local\Programs\Python\Python310\lib\asyncio\sslproto.py", line 690, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\АДМИН\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 365, in write
+    self._loop_writing(data=bytes(data))
+  File "C:\Users\АДМИН\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 401, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+AttributeError: 'NoneType' object has no attribute 'send'
+2025-12-27 23:04:28,852 - __main__ - INFO - ==================================================
+2025-12-27 23:04:28,869 - __main__ - INFO - Запуск медицинского бота RazMedBot
+2025-12-27 23:04:28,870 - __main__ - INFO - Токен: 8499939933:AAGF...
+2025-12-27 23:04:28,871 - __main__ - INFO - Режим оплаты: ТЕСТОВЫЙ
+2025-12-27 23:04:28,871 - __main__ - INFO - Макс. документов: 10
+2025-12-27 23:04:28,872 - __main__ - INFO - Размер файла: 20.0 МБ
+2025-12-27 23:04:28,873 - __main__ - INFO - Админ ID: 6128491472
+2025-12-27 23:04:28,873 - __main__ - INFO - ==================================================
+2025-12-27 23:04:29,577 - __main__ - INFO - Бот авторизован как: @MedRazbor_help_bot (ID: 8499939933)
+2025-12-27 23:04:29,740 - __main__ - INFO - Команды бота успешно настроены
+2025-12-27 23:04:29,763 - database.database - INFO - Создан бэкап БД: backup_20251227_230429.db
+2025-12-27 23:04:29,764 - __main__ - INFO - Резервная копия БД создана при запуске
+2025-12-27 23:04:30,253 - __main__ - INFO - Все роутеры успешно зарегистрированы
+2025-12-27 23:04:30,255 - __main__ - INFO - Бот готов к работе. Ожидание сообщений...
+2025-12-27 23:04:30,392 - aiogram.dispatcher - INFO - Start polling
+2025-12-27 23:04:30,541 - aiogram.dispatcher - INFO - Run polling for bot @MedRazbor_help_bot id=8499939933 - 'RazMedBot'
+2025-12-27 23:04:47,304 - aiogram.event - INFO - Update id=979177616 is handled. Duration 500 ms by bot id=8499939933
+2025-12-27 23:04:51,180 - aiogram.event - INFO - Update id=979177617 is handled. Duration 172 ms by bot id=8499939933
+2025-12-27 23:04:53,636 - aiogram.event - INFO - Update id=979177618 is handled. Duration 250 ms by bot id=8499939933
+2025-12-27 23:04:56,815 - aiogram.event - INFO - Update id=979177619 is handled. Duration 171 ms by bot id=8499939933
+2025-12-27 23:05:01,796 - aiogram.event - INFO - Update id=979177620 is handled. Duration 172 ms by bot id=8499939933
+2025-12-27 23:05:06,322 - aiogram.event - INFO - Update id=979177621 is handled. Duration 250 ms by bot id=8499939933
+2025-12-27 23:05:12,364 - aiogram.event - INFO - Update id=979177622 is handled. Duration 234 ms by bot id=8499939933
+2025-12-27 23:05:20,445 - aiogram.event - INFO - Update id=979177623 is handled. Duration 171 ms by bot id=8499939933
+2025-12-27 23:05:25,317 - aiogram.event - INFO - Update id=979177624 is handled. Duration 171 ms by bot id=8499939933
+2025-12-27 23:05:40,064 - aiogram.event - INFO - Update id=979177625 is handled. Duration 156 ms by bot id=8499939933
+2025-12-27 23:06:58,157 - aiogram.event - INFO - Update id=979177626 is handled. Duration 483 ms by bot id=8499939933
+2025-12-27 23:08:28,141 - aiogram.event - INFO - Update id=979177627 is handled. Duration 625 ms by bot id=8499939933
+2025-12-27 23:14:06,160 - aiogram.event - INFO - Update id=979177628 is handled. Duration 593 ms by bot id=8499939933
+2025-12-27 23:14:07,948 - aiogram.event - INFO - Update id=979177629 is handled. Duration 156 ms by bot id=8499939933
+2025-12-27 23:14:09,344 - aiogram.event - INFO - Update id=979177630 is handled. Duration 171 ms by bot id=8499939933
+2025-12-27 23:14:10,550 - aiogram.event - INFO - Update id=979177631 is handled. Duration 156 ms by bot id=8499939933
+2025-12-27 23:14:16,954 - aiogram.event - INFO - Update id=979177632 is handled. Duration 171 ms by bot id=8499939933
+2025-12-27 23:15:34,533 - aiogram.event - INFO - Update id=979177633 is handled. Duration 531 ms by bot id=8499939933
+2025-12-27 23:15:38,232 - aiogram.event - INFO - Update id=979177634 is handled. Duration 359 ms by bot id=8499939933
+2025-12-27 23:37:04,759 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: Telegram server says ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+2025-12-27 23:37:04,782 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8499939933)
+2025-12-27 23:37:25,166 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8499939933)
+2025-12-27 23:38:14,304 - aiogram.dispatcher - INFO - Polling stopped
+2025-12-27 23:38:14,520 - aiogram.dispatcher - INFO - Polling stopped for bot @MedRazbor_help_bot id=8499939933 - 'RazMedBot'
+2025-12-27 23:38:14,652 - __main__ - INFO - Остановка бота...
+2025-12-27 23:38:15,697 - __main__ - INFO - Соединение с БД закрыто
+2025-12-27 23:38:17,699 - __main__ - INFO - Бот остановлен пользователем (Ctrl+C)
+2025-12-27 23:38:19,027 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000014A47C0BC40>
+2025-12-27 23:38:19,100 - asyncio - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x0000014A47B4E3E0>, 44503.031)]']
+connector: <aiohttp.connector.TCPConnector object at 0x0000014A47C0B6D0>
+2025-12-27 23:38:19,102 - asyncio - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000014A47C0BE50>
+transport: <_ProactorSocketTransport fd=540 read=<_OverlappedFuture cancelled>>
+Traceback (most recent call last):
+  File "C:\Users\АДМИН\AppData\Local\Programs\Python\Python310\lib\asyncio\sslproto.py", line 690, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\АДМИН\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 365, in write
+    self._loop_writing(data=bytes(data))
+  File "C:\Users\АДМИН\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 401, in _loop_writing
+    self._write_fut = self._loop._proactor.send(self._sock, data)
+AttributeError: 'NoneType' object has no attribute 'send'
